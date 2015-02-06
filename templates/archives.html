@@ -19,7 +19,15 @@
                     <h5 class="archive-date">{{ article.date|strftime('%Y') }}</h5>
                     <h4 class="archive-date">{{ article.date|strftime('%d %B') }}</h4>
                     <div class="archive-post"><a href="{{ article.url }}">{{ article.title }}</a></div>
-                    <p class="archive-meta">{{ article.author }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
+                    <p class="archive-meta">{{ article.author }}
+                        {% for tag in article.tags  %}
+                            {%- if loop.first -%}
+                                in <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                            {%- else -%}
+                                , <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                 </div>
             {% endfor %}
         </div>
