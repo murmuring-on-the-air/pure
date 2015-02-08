@@ -37,13 +37,13 @@
             <section class="post">
                 <header class="post-header">
                     <h1>{{ article.title }}</h1>
-                        {% if article.tags %}
-                            <p class="post-meta">
-                                {% for tag in article.tags %}
-                                    <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-                                {% endfor %}
-                            </p>
-                        {% endif %}
+                    {% if article.tags %}
+                        <p class="post-meta">
+                            {% for tag in article.tags %}
+                                <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
                 </header>
             </section>
             {{ article.content }}
