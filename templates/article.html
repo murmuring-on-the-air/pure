@@ -47,6 +47,9 @@
                 </header>
             </section>
             {{ article.content }}
+            <div class="fblike">
+            {% include 'facebook-button.html' %}
+            </div>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
             {% if DISQUS_SITENAME %}
